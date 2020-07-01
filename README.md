@@ -8,6 +8,39 @@ selection doesn't feel broken.
 
 [Try it out](https://codepen.io/ibash/pen/bGEYobb)
 
+# The Rules
+
+The rules of selection:
+
+1. Anchor is where selection starts
+2. Focus is where selection ends
+
+--
+
+1. Click
+
+    1. move anchor and selection to the element clicked
+    2. selection is the element clicked
+
+2. Command click
+
+    1. if the element is not selected
+        1. move anchor and selection to the element clicked
+        2. add it to the selection
+
+    2. if the element is selected
+        1. remove it from the selection
+        2. anchor / focus move to: the next greatest selected, or the least index (backwards) from click point
+
+3. shift click
+
+    1. remove everything between anchor and focus
+    2. move focus to where clicked
+    3. add everything between focus and anchor
+
+4. command takes precedence over shift
+
+
 ## Example
 
 ```
